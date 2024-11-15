@@ -14,6 +14,7 @@ import (
 const (
 	// SkipL1InfoTreeLeaf is special  index that skip the change of GlobalExitRoot, so the value of this leaf is never used
 	SkipL1InfoTreeLeaf = uint32(0)
+	emptyL1InfoRoot    = "0x27ae5ba08d7291c96c8cbddcc148bf48a6d68c7974b94356f53754ef6171d757"
 )
 
 type L1InfoTreeLeaf = entities.L1InfoTreeLeaf
@@ -149,6 +150,10 @@ func (s *L1InfoTreeState) GetL1InfoTreeLeaves(ctx context.Context, indexLeaves [
 }
 
 func (s *L1InfoTreeState) GetLeafsByL1InfoRoot(ctx context.Context, l1InfoRoot common.Hash, dbTx stateTxType) ([]L1InfoTreeLeaf, error) {
+	if l1InfoRoot == common.HexToHash(emptyL1InfoRoot) {
+		res := make([]L1InfoTreeLeaf, 0)
+		return res, nil
+	}
 	leaves, err := s.storage.GetLeafsByL1InfoRoot(ctx, l1InfoRoot, dbTx)
 	if err != nil {
 		log.Error("error getting leaves by L1InfoRoot. Error: ", err)

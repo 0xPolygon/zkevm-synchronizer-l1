@@ -2,13 +2,6 @@
 	Environment = "development" # "production" or "development"
 	Level = "info"
 	Outputs = ["stderr"]
-[DB]
-	Name = "sync"
-	User = "test_user"
-	Password = "test_password"
-	Host = "localhost"
-	Port = "5436"
-	MaxConns = 10
 [Synchronizer]
 	SyncInterval = "10s"
 	SyncChunkSize = 100
@@ -20,3 +13,4 @@
 		GlobalExitRootManagerAddr = "0xAd1490c248c5d3CbAE399Fd529b79B42984277DF"
 		RollupManagerAddr = "0x32d33D5137a7cFFb54c5Bf8371172bcEc5f310ff"
 		ZkEVMAddr = "0xA13Ddb14437A8F34897131367ad3ca78416d6bCa"
+

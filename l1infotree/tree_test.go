@@ -3,6 +3,7 @@ package l1infotree_test
 import (
 	"encoding/hex"
 	"encoding/json"
+	"fmt"
 	"os"
 	"testing"
 
@@ -127,4 +128,22 @@ func TestAddLeaf2(t *testing.T) {
 		require.NoError(t, err)
 		require.Equal(t, testVector.NewRoot, newRoot)
 	}
+}
+
+func Test1Leave(t *testing.T) {
+	mt, err := l1infotree.NewL1InfoTree(uint8(32), [][32]byte{})
+	require.NoError(t, err)
+	leaves := [][32]byte{
+		common.HexToHash("0x6a617315ffc0a6831d2de6331f8d3e053889e9385696c13f11853fdcba50e123"),
+		common.HexToHash("0x1cff355b898cf285bcc3f84a8d6ed51c19fe87ab654f4146f2dc7723a59fc741"),
+	}
+	//require.Equal(t, 26, len(leaves))
+	siblings, root, err := mt.ComputeMerkleProof(2, leaves)
+	require.NoError(t, err)
+	fmt.Printf("Root: %s\n", root.String())
+	for i := 0; i < len(siblings); i++ {
+		hash := common.BytesToHash(siblings[i][:])
+		fmt.Printf("Sibling %d: %s\n", i, hash.String())
+	}
+
 }
