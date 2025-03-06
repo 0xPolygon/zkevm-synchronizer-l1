@@ -55,7 +55,7 @@ func (_c *Tx_AddCommitCallback_Call) Return() *Tx_AddCommitCallback_Call {
 }
 
 func (_c *Tx_AddCommitCallback_Call) RunAndReturn(run func(entities.TxCallbackType)) *Tx_AddCommitCallback_Call {
-	_c.Call.Return(run)
+	_c.Run(run)
 	return _c
 }
 
@@ -88,7 +88,7 @@ func (_c *Tx_AddRollbackCallback_Call) Return() *Tx_AddRollbackCallback_Call {
 }
 
 func (_c *Tx_AddRollbackCallback_Call) RunAndReturn(run func(entities.TxCallbackType)) *Tx_AddRollbackCallback_Call {
-	_c.Call.Return(run)
+	_c.Run(run)
 	return _c
 }
 
@@ -243,7 +243,7 @@ func (_c *Tx_Commit_Call) RunAndReturn(run func(context.Context) error) *Tx_Comm
 	return _c
 }
 
-// Conn provides a mock function with given fields:
+// Conn provides a mock function with no fields
 func (_m *Tx) Conn() *pgx.Conn {
 	ret := _m.Called()
 
@@ -419,7 +419,7 @@ func (_c *Tx_Exec_Call) RunAndReturn(run func(context.Context, string, ...interf
 	return _c
 }
 
-// LargeObjects provides a mock function with given fields:
+// LargeObjects provides a mock function with no fields
 func (_m *Tx) LargeObjects() pgx.LargeObjects {
 	ret := _m.Called()
 

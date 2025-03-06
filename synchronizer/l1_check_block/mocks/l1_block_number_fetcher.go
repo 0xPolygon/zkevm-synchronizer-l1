@@ -79,7 +79,7 @@ func (_c *L1BlockNumberFetcher_BlockNumber_Call) RunAndReturn(run func(context.C
 	return _c
 }
 
-// Description provides a mock function with given fields:
+// Description provides a mock function with no fields
 func (_m *L1BlockNumberFetcher) Description() string {
 	ret := _m.Called()
 

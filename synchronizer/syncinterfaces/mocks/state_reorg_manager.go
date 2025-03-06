@@ -53,7 +53,7 @@ func (_c *stateReorgManager_AddOnReorgCallback_Call) Return() *stateReorgManager
 }
 
 func (_c *stateReorgManager_AddOnReorgCallback_Call) RunAndReturn(run func(func(model.ReorgExecutionResult))) *stateReorgManager_AddOnReorgCallback_Call {
-	_c.Call.Return(run)
+	_c.Run(run)
 	return _c
 }
 

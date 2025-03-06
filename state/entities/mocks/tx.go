@@ -51,7 +51,7 @@ func (_c *Tx_AddCommitCallback_Call) Return() *Tx_AddCommitCallback_Call {
 }
 
 func (_c *Tx_AddCommitCallback_Call) RunAndReturn(run func(entities.TxCallbackType)) *Tx_AddCommitCallback_Call {
-	_c.Call.Return(run)
+	_c.Run(run)
 	return _c
 }
 
@@ -84,7 +84,7 @@ func (_c *Tx_AddRollbackCallback_Call) Return() *Tx_AddRollbackCallback_Call {
 }
 
 func (_c *Tx_AddRollbackCallback_Call) RunAndReturn(run func(entities.TxCallbackType)) *Tx_AddRollbackCallback_Call {
-	_c.Call.Return(run)
+	_c.Run(run)
 	return _c
 }
 

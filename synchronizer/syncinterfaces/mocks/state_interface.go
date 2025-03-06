@@ -212,7 +212,7 @@ func (_c *StateInterface_AddOnReorgCallback_Call) Return() *StateInterface_AddOn
 }
 
 func (_c *StateInterface_AddOnReorgCallback_Call) RunAndReturn(run func(func(model.ReorgExecutionResult))) *StateInterface_AddOnReorgCallback_Call {
-	_c.Call.Return(run)
+	_c.Run(run)
 	return _c
 }
 
@@ -245,7 +245,7 @@ func (_c *StateInterface_AddOnRollbackBatchesCallback_Call) Return() *StateInter
 }
 
 func (_c *StateInterface_AddOnRollbackBatchesCallback_Call) RunAndReturn(run func(func(model.RollbackBatchesExecutionResult))) *StateInterface_AddOnRollbackBatchesCallback_Call {
-	_c.Call.Return(run)
+	_c.Run(run)
 	return _c
 }
 

@@ -17,7 +17,7 @@ func (_m *EthermanChainQuerier) EXPECT() *EthermanChainQuerier_Expecter {
 	return &EthermanChainQuerier_Expecter{mock: &_m.Mock}
 }
 
-// GetL1ChainID provides a mock function with given fields:
+// GetL1ChainID provides a mock function with no fields
 func (_m *EthermanChainQuerier) GetL1ChainID() uint64 {
 	ret := _m.Called()
 
@@ -62,7 +62,7 @@ func (_c *EthermanChainQuerier_GetL1ChainID_Call) RunAndReturn(run func() uint64
 	return _c
 }
 
-// GetRollupID provides a mock function with given fields:
+// GetRollupID provides a mock function with no fields
 func (_m *EthermanChainQuerier) GetRollupID() uint {
 	ret := _m.Called()
 

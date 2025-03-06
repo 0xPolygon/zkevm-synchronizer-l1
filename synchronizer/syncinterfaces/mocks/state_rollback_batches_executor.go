@@ -53,7 +53,7 @@ func (_c *StateRollbackBatchesExecutor_AddOnRollbackBatchesCallback_Call) Return
 }
 
 func (_c *StateRollbackBatchesExecutor_AddOnRollbackBatchesCallback_Call) RunAndReturn(run func(func(model.RollbackBatchesExecutionResult))) *StateRollbackBatchesExecutor_AddOnRollbackBatchesCallback_Call {
-	_c.Call.Return(run)
+	_c.Run(run)
 	return _c
 }
 
