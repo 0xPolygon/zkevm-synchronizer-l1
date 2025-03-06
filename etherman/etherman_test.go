@@ -11,6 +11,7 @@ import (
 )
 
 func TestMainnet(t *testing.T) {
+	t.Skip("exploratory test")
 	cfg := etherman.Config{
 		L1URL:           os.Getenv("L1URL_MAINNET"),
 		ForkIDChunkSize: 100,
@@ -35,6 +36,7 @@ func TestMainnet(t *testing.T) {
 }
 
 func TestSepolia(t *testing.T) {
+	t.Skip("exploratory test")
 	cfg := etherman.Config{
 		L1URL:           os.Getenv("L1URL_SEPOLIA"),
 		ForkIDChunkSize: 100,
