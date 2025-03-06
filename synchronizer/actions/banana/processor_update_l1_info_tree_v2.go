@@ -2,6 +2,7 @@ package banana
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"time"
 
@@ -64,7 +65,7 @@ func (p *ProcessorUpdateL1InfoTreeV2) ProcessUpdateL1InfoTreeV2(ctx context.Cont
 			responseErr += fmt.Sprintf(" Error getting latest leaf on DB: %v", err)
 		}
 		log.Error(responseErr)
-		return fmt.Errorf(responseErr)
+		return errors.New(responseErr)
 
 	}
 	return nil

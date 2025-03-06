@@ -21,24 +21,24 @@ func TestReorg(t *testing.T) {
 	tx, err := storage.BeginTransaction(context.TODO())
 	require.NoError(t, err)
 	ctx := context.TODO()
-	storage.AddBlock(ctx, &sqlstorage.L1Block{BlockNumber: 10}, tx)
-	storage.AddBlock(ctx, &sqlstorage.L1Block{BlockNumber: 20}, tx)
-	storage.AddBlock(ctx, &sqlstorage.L1Block{BlockNumber: 30}, tx)
-	storage.AddSequencedBatches(ctx, &sqlstorage.SequencedBatches{
+	require.NoError(t, storage.AddBlock(ctx, &sqlstorage.L1Block{BlockNumber: 10}, tx))
+	require.NoError(t, storage.AddBlock(ctx, &sqlstorage.L1Block{BlockNumber: 20}, tx))
+	require.NoError(t, storage.AddBlock(ctx, &sqlstorage.L1Block{BlockNumber: 30}, tx))
+	require.NoError(t, storage.AddSequencedBatches(ctx, &sqlstorage.SequencedBatches{
 		FromBatchNumber: 1,
 		ToBatchNumber:   10,
 		L1BlockNumber:   10,
-	}, tx)
-	storage.AddSequencedBatches(ctx, &sqlstorage.SequencedBatches{
+	}, tx))
+	require.NoError(t, storage.AddSequencedBatches(ctx, &sqlstorage.SequencedBatches{
 		FromBatchNumber: 11,
 		ToBatchNumber:   12,
 		L1BlockNumber:   20,
-	}, tx)
-	storage.AddSequencedBatches(ctx, &sqlstorage.SequencedBatches{
+	}, tx))
+	require.NoError(t, storage.AddSequencedBatches(ctx, &sqlstorage.SequencedBatches{
 		FromBatchNumber: 13,
 		ToBatchNumber:   14,
 		L1BlockNumber:   30,
-	}, tx)
+	}, tx))
 	err = tx.Commit(ctx)
 	require.NoError(t, err)
 
