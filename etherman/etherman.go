@@ -525,7 +525,7 @@ func (etherMan *Client) GetRollupInfoByBlockRangePreviousRollupGenesis(ctx conte
 	query := ethereum.FilterQuery{
 		FromBlock: new(big.Int).SetUint64(fromBlock),
 		Addresses: []common.Address{etherMan.cfg.Contracts.GlobalExitRootManagerAddr},
-		Topics:    [][]common.Hash{{updateL1InfoTreeSignatureHash}},
+		Topics:    [][]common.Hash{{updateL1InfoTreeSignatureHash}, {updateL1InfoTreeV2SignatureHash}},
 	}
 	if toBlock != nil {
 		query.ToBlock = new(big.Int).SetUint64(*toBlock)
