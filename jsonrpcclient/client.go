@@ -3,6 +3,7 @@ package jsonrpcclient
 import (
 	"bytes"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 	"net/http"
@@ -110,7 +111,7 @@ func JSONRPCBatchCall(url string, calls ...BatchCall) ([]types.Response, error) 
 	err = json.Unmarshal(resBody, &res)
 	if err != nil {
 		errorMessage := string(resBody)
-		return nil, fmt.Errorf(errorMessage)
+		return nil, errors.New(errorMessage)
 	}
 
 	return res, nil

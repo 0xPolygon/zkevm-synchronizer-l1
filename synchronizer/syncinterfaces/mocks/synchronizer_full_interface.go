@@ -17,7 +17,7 @@ func (_m *SynchronizerFullInterface) EXPECT() *SynchronizerFullInterface_Expecte
 	return &SynchronizerFullInterface_Expecter{mock: &_m.Mock}
 }
 
-// CleanTrustedState provides a mock function with given fields:
+// CleanTrustedState provides a mock function with no fields
 func (_m *SynchronizerFullInterface) CleanTrustedState() {
 	_m.Called()
 }
@@ -45,11 +45,11 @@ func (_c *SynchronizerFullInterface_CleanTrustedState_Call) Return() *Synchroniz
 }
 
 func (_c *SynchronizerFullInterface_CleanTrustedState_Call) RunAndReturn(run func()) *SynchronizerFullInterface_CleanTrustedState_Call {
-	_c.Call.Return(run)
+	_c.Run(run)
 	return _c
 }
 
-// IsTrustedSequencer provides a mock function with given fields:
+// IsTrustedSequencer provides a mock function with no fields
 func (_m *SynchronizerFullInterface) IsTrustedSequencer() bool {
 	ret := _m.Called()
 

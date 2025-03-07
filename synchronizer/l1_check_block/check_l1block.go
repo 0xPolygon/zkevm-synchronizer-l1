@@ -139,7 +139,7 @@ func CheckBlockHash(ctx context.Context, stateBlock *L1Block, L1Client L1Request
 			msg += fmt.Sprintf(" ParentHash are also different. l1Block.ParentHash=%s !=  stateBlock.ParentHash=%s", l1Block.ParentHash.String(), stateBlock.ParentHash.String())
 		}
 		log.Errorf(msg)
-		return common.NewReorgError(stateBlock.BlockNumber, fmt.Errorf(msg))
+		return common.NewReorgError(stateBlock.BlockNumber, errors.New(msg))
 	}
 	return nil
 }

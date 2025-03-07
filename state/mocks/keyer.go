@@ -63,7 +63,7 @@ func (_c *Keyer_IsEqual_Call) RunAndReturn(run func(interface{}) bool) *Keyer_Is
 	return _c
 }
 
-// Key provides a mock function with given fields:
+// Key provides a mock function with no fields
 func (_m *Keyer) Key() uint64 {
 	ret := _m.Called()
 

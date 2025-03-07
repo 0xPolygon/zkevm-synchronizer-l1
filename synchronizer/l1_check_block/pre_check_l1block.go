@@ -127,7 +127,7 @@ func (p *PreCheckL1BlockHash) checkThatStateBlockIsTheSame(ctx context.Context, 
 		msg := fmt.Sprintf("%s: The blockNumber returned by state %d is different from the state blockNumber %d",
 			p.Name(), block.BlockNumber, stateBlock.BlockNumber)
 		log.Warn(msg)
-		return false, fmt.Errorf(msg)
+		return false, errors.New(msg)
 	}
 	if stateBlock.BlockHash != block.BlockHash {
 		msg := fmt.Sprintf("%s: The blockNumber %d differs the hash checked %s from current in state %s",
