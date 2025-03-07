@@ -2,8 +2,6 @@ module github.com/0xPolygonHermez/zkevm-synchronizer-l1
 
 go 1.23.7
 
-toolchain go1.23.7
-
 require (
 	github.com/0xPolygon/cdk-contracts-tooling v0.0.0-20240826154954-f6182d2b17a2
 	github.com/0xPolygon/cdk-data-availability v0.0.10
