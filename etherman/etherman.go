@@ -13,9 +13,9 @@ import (
 	"sync"
 	"time"
 
-	bananarollupmanager "github.com/0xPolygon/cdk-contracts-tooling/contracts/banana/polygonrollupmanager"
-	bananarollupcontract "github.com/0xPolygon/cdk-contracts-tooling/contracts/banana/polygonvalidiumetrog"
-	bananaglobalexitrootv2 "github.com/0xPolygon/cdk-contracts-tooling/contracts/banana/polygonzkevmglobalexitrootv2"
+	bananarollupmanager "github.com/0xPolygon/cdk-contracts-tooling/contracts/fep/banana/polygonrollupmanager"
+	bananarollupcontract "github.com/0xPolygon/cdk-contracts-tooling/contracts/fep/banana/polygonvalidiumetrog"
+	bananaglobalexitrootv2 "github.com/0xPolygon/cdk-contracts-tooling/contracts/fep/banana/polygonzkevmglobalexitrootv2"
 	"github.com/0xPolygonHermez/zkevm-synchronizer-l1/etherman/metrics"
 	"github.com/0xPolygonHermez/zkevm-synchronizer-l1/etherman/smartcontracts/etrogpolygonzkevm"
 	"github.com/0xPolygonHermez/zkevm-synchronizer-l1/etherman/smartcontracts/oldpolygonzkevm"
